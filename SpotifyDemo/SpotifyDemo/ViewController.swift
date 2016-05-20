@@ -44,6 +44,15 @@ class ViewController: UIViewController {
             "Rolling Stones",
             "Sonata Artica"
         ]
+        
+        //Add gradient background to superview
+        let bgLayer: CAGradientLayer = BackgroundLayer.blueGradient()
+        bgLayer.frame = self.view.bounds
+        self.view.layer.insertSublayer(bgLayer, atIndex: 0)
+        
+        //Make collectionView with transparent background
+        self.collectionView.backgroundColor = UIColor.blackColor()
+        self.collectionView.backgroundView = UIView.init(frame: CGRectZero)
     }
 
     override func didReceiveMemoryWarning() {
